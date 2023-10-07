@@ -1,0 +1,89 @@
+html
+  head
+    title Thêm bình luận mới
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+        background-image: url("https://wallpapers.com/images/hd/4k-white-abstract-waves-i308ljad82204626.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+        padding-top: 20px;
+      }
+
+      form {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type="date"],
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+      button[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #0056b3;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: #007bff;
+        margin-top: 10px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+  body
+    h1 Thêm bình luận mới
+    form(action=`/posts/${postId}/comments/new`, method="POST")
+      label(for="post_id")
+      input(type='hidden', name='post_id', value=postId) 
+
+      label(for="by_user") Người dùng:
+      input(type="text", name="by_user")
+
+      label(for="message") Nội dung:
+      input(type="text", name="message")
+
+      label(for="date_time") Ngày:
+      input(type="date", name="date_time")
+
+      label(for="likes") Số lượt thích:
+      input(type="number", name="likes")
+
+      button(type="submit") Thêm bình luận
+    a(href=`/posts/${postId}/comments`) Quay lại danh sách bình luận

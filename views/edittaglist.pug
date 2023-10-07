@@ -1,0 +1,80 @@
+html
+  head
+    title Chỉnh sửa tag list
+    style.
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 0;
+          background-image: url("https://wallpapers.com/images/hd/4k-white-abstract-waves-i308ljad82204626.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+
+        .container {
+          max-width: 600px;
+          margin: 20 auto;
+          background-color: #fff;
+          padding: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+          text-align: center;
+          color: #333;
+          margin-bottom: 20px;
+        }
+
+        label {
+          display: block;
+          margin-top: 10px;
+          font-weight: bold;
+        }
+        
+        input[type="number"],
+        input[type="date"],
+        input[type="text"] {
+          width: 100%;
+          padding: 10px;
+          margin-top: 5px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+
+        button[type="submit"] {
+          background-color: #007bff;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          margin-top: 20px;
+          margin-right: 80px;
+          cursor: pointer;
+          border-radius: 3px;
+        }
+
+        button[type="submit"]:hover {
+          background-color: #0056b3;
+        }
+
+        a.back-link {
+          display: block;
+          text-align: center;
+          margin-top: 20px;
+          text-decoration: none;
+          color: #007bff;
+        }
+  body
+    .container
+        h1 Chỉnh sửa tag list
+        form(action=`/posts/taglists/${taglists.id}/edit`, method="POST")
+            label(for="post_id") Post_id:
+            input(type="text", name="post_id", value=taglists.post_id.toString())
+
+            label(for="tag") Người dùng:
+            input(type="text", name="tag", value=taglists.tag)
+
+            button(type="submit") Cập nhật
+        a(href=`/posts/${taglists.post_id}/taglists`) Quay lại danh sách tag list

@@ -1,0 +1,92 @@
+html
+  head
+    title Trang chủ
+    style.
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 0;
+          background-image: url("https://wallpapers.com/images/hd/4k-white-abstract-waves-i308ljad82204626.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+        h1 {
+          text-align: center;
+          color: #333;
+          padding-top: 20px;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+        table, th, td {
+          border: 1px solid #333;
+        }
+        th, td {
+          padding: 10px;
+          text-align: left;
+        }
+        th {
+          background-color: #333;
+          color: white;
+        }
+        td a {
+          text-decoration: none;
+          color: #007bff;
+          margin-right: 10px;
+        }
+        td a:hover {
+          text-decoration: underline;
+        }
+        p {
+          text-align: center;
+          margin-top: 20px;
+        }
+        a.add-post {
+          display: block;
+          text-align: center;
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          margin: 20px auto;
+          width: 150px;
+          border-radius: 5px;
+        }
+        a.add-post:hover {
+          background-color: #0056b3;
+        }
+  body
+    h1 Danh sách bài viết
+    p
+      a(href='/posts/new') Thêm bài viết
+    table
+      thead
+        tr
+          th Chủ đề
+          th Mô tả
+          th URL
+          th Số lượt thích
+          th Đăng bởi
+          th Sửa/Xóa
+          th Bình luận 
+          th Tag list 
+      tbody
+        each post in posts 
+          tr
+            td= post.title
+            td= post.description
+            td= post.url
+            td= post.likes
+            td= post.post_by
+            td
+              a(href=`/posts/${post.id}/edit`) Edit
+              a(href=`/posts/${post.id}/delete`) Delete
+            td 
+              a(href=`/posts/${post.id}/comments`) Xem
+              a(href=`/posts/${post.id}/comments/new`) Thêm
+            td
+              a(href=`/posts/${post.id}/taglists`) Xem
+              a(href=`/posts/${post.id}/taglists/new`) Thêm

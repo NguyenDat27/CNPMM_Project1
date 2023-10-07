@@ -1,0 +1,89 @@
+html
+  head
+    title Thêm bài viết mới
+    style.
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 0;
+          background-image: url("https://wallpapers.com/images/hd/4k-white-abstract-waves-i308ljad82204626.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+
+        h1 {
+          text-align: center;
+          color: #333;
+          padding-top: 20px;
+        }
+
+        form {
+          max-width: 400px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+          width: 100%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 3px;
+        }
+
+        button[type="submit"] {
+          background-color: #007bff;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          text-transform: uppercase;
+          border-radius: 3px;
+          cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+          background-color: #0056b3;
+        }
+
+        a {
+          display: block;
+          text-align: center;
+          text-decoration: none;
+          color: #007bff;
+          margin-top: 10px;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+  body
+    h1 Thêm bài viết mới
+    form(action="/posts/new", method="POST")
+      label(for="title") Tiêu đề:
+      input(type="text", name="title", required)
+
+      label(for="description") Mô tả:
+      input(type="text", name="description", required)
+
+      label(for="url") URL:
+      input(type="text", name="url", required)
+
+      label(for="likes") Số lượt thích:
+      input(type="number", name="likes", required)
+
+      label(for="post_by") Bài viết bởi:
+      input(type="text", name="post_by", required)
+
+      button(type="submit") Thêm bài viết
+    a(href="/") Quay lại danh sách bài viết
+

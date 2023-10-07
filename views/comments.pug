@@ -1,0 +1,88 @@
+html
+  head
+    title Trang bình luận
+    style.
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 0;
+          background-image: url("https://wallpapers.com/images/hd/4k-white-abstract-waves-i308ljad82204626.jpg");
+          background-size: cover;
+          background-position: center;
+        }
+        h1 {
+          text-align: center;
+          color: #333;
+          padding-top: 20px;
+        }
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+        table, th, td {
+          border: 1px solid #333;
+        }
+        th, td {
+          padding: 10px;
+          text-align: left;
+        }
+        th {
+          background-color: #333;
+          color: white;
+        }
+        td a {
+          text-decoration: none;
+          color: #007bff;
+          margin-right: 10px;
+        }
+        td a:hover {
+          text-decoration: underline;
+        }
+        p {
+          text-align: center;
+          margin-top: 20px;
+        }
+        p {
+          text-align: center;
+          margin-top: 20px;
+        }
+        a.add-post {
+          display: block;
+          text-align: center;
+          background-color: #007bff;
+          color: white;
+          padding: 10px 20px;
+          text-decoration: none;
+          margin: 20px auto;
+          width: 150px;
+          border-radius: 5px;
+        }
+        a.add-post:hover {
+          background-color: #0056b3;
+        }
+  body
+    h1 Danh sách bình luận
+    p
+      a(href="/") Trở về trang chủ
+    table
+      thead
+        tr
+          th Chủ đề
+          th Người dùng
+          th Nội dung
+          th Ngày
+          th Lượt thích
+          th Sửa/Xóa
+      tbody
+        each comment in comments
+          tr
+            td= posts.title
+            td= comment.by_user
+            td= comment.message
+            td= comment.date_time
+            td= comment.likes
+            td
+              a(href=`/posts/comments/${comment.id}/edit`) Edit
+              a(href=`/posts/comments/delete/${comment.id}`) Delete
